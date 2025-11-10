@@ -1,0 +1,82 @@
+* {
+  font-size: 14px; /* Smaller font for compact look */
+}
+
+window#waybar {
+  border-radius: 5px;
+  background: transparent;
+  padding: 2px 0; /* Reduce vertical padding */
+  font-weight: bold;
+}
+
+#clock,
+#network,
+#pulseaudio,
+#custom-battery,
+#workspaces {
+  padding: 0px 6px; /* Reduce horizontal padding */
+  border-radius: 5px;
+  background: rgba(46, 52, 64, 0.75);
+}
+
+#workspaces button {
+  font-size: 13px; /* Slightly smaller font */
+  padding: 0px 4px; /* Reduce button size */
+}
+
+
+#custom-battery.full {
+    color: #a3be8c; /* green */
+}
+
+
+#custom-battery.20,
+#custom-battery.10,
+#custom-battery.critical {
+    color: #bf616a; /* red */
+}
+
+#custom-battery.charging {
+    color: #88c0d0; /* blue-ish for charging */
+}
+
+#workspaces button {
+  color: #88c0d0;
+  background: transparent;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: all 0.2s ease;
+  font-family: "JetBrainsMono Nerd Font", monospace;
+}
+
+#workspaces button:hover {
+  background: rgba(136, 192, 208, 0.1);
+}
+
+#workspaces button.focused {
+  color: #2e3440;
+  font-weight: bold;
+}
+
+#workspaces button.visible {
+  color: #eceff4;
+}
+
+#workspaces button.urgent {
+  color: #bf616a;
+  animation: urgent-blink 1s infinite;
+}
+
+#workspaces button.empty {
+  opacity: 0.4;
+}
+
+/* Optional: urgent blinking effect */
+@keyframes urgent-blink {
+  0% { background-color: #bf616a; }
+  50% { background-color: #3b4252; }
+  100% { background-color: #bf616a; }
+}
+
+

@@ -1,0 +1,70 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 5,
+  "margin-top": 5,
+  "margin-right": 5,
+  "margin-left": 5,
+  
+  "modules-left": [
+    "hyprland/workspaces"
+  ],
+
+  "modules-center": [
+    "clock"
+  ],
+
+  "modules-right": [
+    "network",
+    "pulseaudio",
+    "custom/battery"
+  ],
+
+  "network": {
+    "format-wifi": "󰤢",
+    "format-ethernet": "󰈀 ",
+    "format-disconnected": "󰤠 ",
+    "interval": 5,
+    "tooltip-format": "{essid} ({signalStrength}%)",
+    "on-click": "nm-connection-editor"
+
+ },
+
+  "pulseaudio": {
+    "format": "{icon}",
+    "format-muted": "",
+    "format-icons": {
+      "default": ["", "", " "]
+    },
+    "on-click": "pavucontrol"
+  },
+
+  "custom/battery": {
+    "exec": "~/.config/waybar/scripts/battery.sh",
+    "interval": 30,
+    "return-type": "json",
+    "tooltip": false
+  },
+
+  "clock": {
+    "interval": 1,
+    "format": "󰥔 {:%H:%M}",  // Nerd Font clock icon
+    "tooltip-format": "{:%A, %d %B %Y | %H:%M:%S}"
+  },
+
+  "hyprland/workspaces": {
+    "disable-scroll": false,
+    "all-outputs": true,
+    "on-click": "activate",
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "format": "{icon}", // or use {name} for numbers
+    "format-icons": {
+      "active": "●",
+      "default": "○"  // Default icon for other workspaces
+    }
+  }
+}
+
+
+}
